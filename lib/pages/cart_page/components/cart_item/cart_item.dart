@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item/cart_item_price_detail.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item/cart_item_titled.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item/cart_items_counter.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/components/cart_item_price_detail.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/components/cart_item_titled.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/components/cart_items_counter.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({
