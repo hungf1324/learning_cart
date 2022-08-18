@@ -10,8 +10,6 @@ class CartItem extends StatelessWidget {
     this.itemCount = 1,
     this.borderRadius = const BorderRadius.all(Radius.circular(20)),
     this.onPressedDeleteButton,
-    this.onPressedMinusButton,
-    this.onPressedAddButton,
   }) : super(key: key);
 
   final String itemName;
@@ -20,8 +18,6 @@ class CartItem extends StatelessWidget {
   final int itemCount;
   final BorderRadius? borderRadius;
   final Function()? onPressedDeleteButton;
-  final Function()? onPressedMinusButton;
-  final Function()? onPressedAddButton;
 
   @override
   Widget build(BuildContext context) {
