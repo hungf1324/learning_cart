@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CheckOutPannel extends StatelessWidget {
-  const CheckOutPannel({
+class CheckOutPanel extends StatelessWidget {
+  const CheckOutPanel({
     Key? key,
     this.onPressedCheckOutButton,
   }) : super(key: key);

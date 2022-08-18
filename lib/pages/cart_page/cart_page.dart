@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_cart/pages/cart_page/components/cart_list.dart';
-import 'package:learning_cart/pages/cart_page/components/checkout_pannel.dart';
+import 'package:learning_cart/pages/cart_page/components/checkout_panel.dart';
 import 'package:learning_cart/pages/cart_page/data/cart_state.dart';
 import 'package:learning_cart/pages/cart_page/data/models/cart_item_model.dart';
 
@@ -26,7 +26,7 @@ class CartPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CheckOutPannel(),
+      bottomNavigationBar: const CheckOutPanel(),
     );
   }
 }
