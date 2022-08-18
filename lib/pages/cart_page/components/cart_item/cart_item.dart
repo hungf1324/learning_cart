@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item/components/items_counter.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/items_counter.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({
