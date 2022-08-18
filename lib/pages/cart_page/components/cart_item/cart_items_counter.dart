@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ItemsCounter extends StatefulWidget {
-  const ItemsCounter({
+class CartItemsCounter extends StatefulWidget {
+  const CartItemsCounter({
     Key? key,
     this.itemCount = 1,
   }) : super(key: key);
@@ -9,10 +9,10 @@ class ItemsCounter extends StatefulWidget {
   final int itemCount;
 
   @override
-  State<ItemsCounter> createState() => _ItemsCounterState();
+  State<CartItemsCounter> createState() => _CartItemsCounterState();
 }
 
-class _ItemsCounterState extends State<ItemsCounter> {
+class _CartItemsCounterState extends State<CartItemsCounter> {
   late int itemCount = widget.itemCount;
   @override
   Widget build(BuildContext context) {

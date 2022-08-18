@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item/items_counter.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/cart_item_price_detail.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/cart_item_titled.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/cart_items_counter.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({
@@ -50,59 +52,13 @@ class CartItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          itemName,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
-                        onPressed: onPressedDeleteButton,
-                      ),
-                    ],
+                  CartItemTitled(
+                    itemName: itemName,
+                    onPressedDeleteButton: onPressedDeleteButton,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      text: 'Price:  ',
-                      children: [
-                        TextSpan(
-                          text: '\$${price.toString()}',
-                          style: const TextStyle(),
-                        ),
-                      ],
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: 'Sub Total:  ',
-                      children: [
-                        TextSpan(
-                          text: '\$${subTotal.toString()}',
-                          style: const TextStyle(
-                            color: Colors.orange,
-                          ),
-                        ),
-                      ],
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                    ),
+                  CartItemPriceDetail(
+                    price: price,
+                    subTotal: subTotal,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,7 +70,7 @@ class CartItem extends StatelessWidget {
                           fontSize: 18,
                         ),
                       ),
-                      ItemsCounter(
+                      CartItemsCounter(
                         itemCount: itemCount,
                       ),
                     ],
