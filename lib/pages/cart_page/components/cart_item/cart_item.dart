@@ -7,7 +7,7 @@ class CartItem extends StatelessWidget {
   const CartItem({
     Key? key,
     required this.itemName,
-    required this.image,
+    required this.imageUrl,
     required this.price,
     this.itemCount = 1,
     this.borderRadius = const BorderRadius.all(Radius.circular(20)),
@@ -15,7 +15,7 @@ class CartItem extends StatelessWidget {
   }) : super(key: key);
 
   final String itemName;
-  final Image image;
+  final String imageUrl;
   final double price;
   final int itemCount;
   final BorderRadius? borderRadius;
@@ -44,7 +44,10 @@ class CartItem extends StatelessWidget {
             SizedBox(
               width: 155,
               height: 140,
-              child: image,
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.fill,
+              ),
             ),
             const SizedBox(width: 20),
             Expanded(

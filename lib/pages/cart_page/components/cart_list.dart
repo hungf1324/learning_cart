@@ -21,10 +21,8 @@ class CartList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: CartItem(
             itemName: 'Item ${index + 1}',
-            image: Image.network(
-              "https://i0.wp.com/www.giztechreview.com/wp-content/uploads/2021/10/Intel-12th-Generation-Core-i9-12900K-Processor-Unboxing-9.jpg",
-              fit: BoxFit.fill,
-            ),
+            imageUrl:
+                "https://i0.wp.com/www.giztechreview.com/wp-content/uploads/2021/10/Intel-12th-Generation-Core-i9-12900K-Processor-Unboxing-9.jpg",
             itemCount: 2,
             price: 200,
           ),
