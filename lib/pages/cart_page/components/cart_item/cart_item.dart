@@ -41,13 +41,11 @@ class CartItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SizedBox(
+            Image.network(
+              imageUrl,
+              fit: BoxFit.fill,
               width: 155,
               height: 140,
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.fill,
-              ),
             ),
             const SizedBox(width: 20),
             Expanded(
