@@ -8,6 +8,7 @@ class CartItem extends StatelessWidget {
     required this.image,
     required this.price,
     this.itemCount = 1,
+    this.borderRadius = const BorderRadius.all(Radius.circular(20)),
     this.onPressedDeleteButton,
     this.onPressedMinusButton,
     this.onPressedAddButton,
@@ -17,6 +18,7 @@ class CartItem extends StatelessWidget {
   final Image image;
   final double price;
   final int itemCount;
+  final BorderRadius? borderRadius;
   final Function()? onPressedDeleteButton;
   final Function()? onPressedMinusButton;
   final Function()? onPressedAddButton;
@@ -25,19 +27,19 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double subTotal = price * itemCount;
     return ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(20)),
+      borderRadius: borderRadius,
       child: Container(
         margin: const EdgeInsets.only(bottom: 3.0, right: 3.0),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.grey,
               offset: Offset(0.0, 1.0), //(x,y)
               blurRadius: 3.0,
             ),
           ],
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          borderRadius: borderRadius,
         ),
         child: Row(
           children: [
@@ -83,7 +85,10 @@ class CartItem extends StatelessWidget {
                           style: const TextStyle(),
                         ),
                       ],
-                      style: const TextStyle(fontSize: 20),
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   RichText(
@@ -97,7 +102,10 @@ class CartItem extends StatelessWidget {
                           ),
                         ),
                       ],
-                      style: const TextStyle(fontSize: 20),
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   Row(
