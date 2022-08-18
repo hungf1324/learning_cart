@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/components/items_counter.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({
@@ -24,9 +25,8 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double subTotal = price * itemCount;
     return ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(15)),
+      borderRadius: const BorderRadius.all(Radius.circular(20)),
       child: Container(
-        height: 160,
         margin: const EdgeInsets.only(bottom: 3.0, right: 3.0),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -37,16 +37,16 @@ class CartItem extends StatelessWidget {
               blurRadius: 3.0,
             ),
           ],
-          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
         child: Row(
           children: [
             SizedBox(
-              width: 150,
-              height: 150,
+              width: 155,
+              height: 140,
               child: image,
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 20),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -58,6 +58,10 @@ class CartItem extends StatelessWidget {
                         child: Text(
                           itemName,
                           overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 10),
@@ -79,6 +83,7 @@ class CartItem extends StatelessWidget {
                           style: const TextStyle(),
                         ),
                       ],
+                      style: const TextStyle(fontSize: 20),
                     ),
                   ),
                   RichText(
@@ -92,6 +97,7 @@ class CartItem extends StatelessWidget {
                           ),
                         ),
                       ],
+                      style: const TextStyle(fontSize: 20),
                     ),
                   ),
                   Row(
@@ -101,32 +107,11 @@ class CartItem extends StatelessWidget {
                         'Ships Free',
                         style: TextStyle(
                           color: Colors.orange,
+                          fontSize: 18,
                         ),
                       ),
-                      Row(
-                        children: [
-                          IconButton(
-                            onPressed: onPressedMinusButton,
-                            icon: const Icon(
-                              Icons.remove,
-                              color: Colors.red,
-                            ),
-                          ),
-                          Card(
-                            elevation: 2.5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(itemCount.toString()),
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: onPressedAddButton,
-                            icon: const Icon(
-                              Icons.add,
-                              color: Colors.green,
-                            ),
-                          ),
-                        ],
+                      ItemsCounter(
+                        itemCount: itemCount,
                       ),
                     ],
                   ),

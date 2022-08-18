@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_cart/pages/cart_page/components/cart_item.dart';
+import 'package:learning_cart/pages/cart_page/components/cart_item/cart_item.dart';
 import 'package:learning_cart/pages/cart_page/data/models/cart_item_model.dart';
 
 class CartList extends StatelessWidget {
@@ -13,16 +13,17 @@ class CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: productList.length,
+      itemCount: 10,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 7.5, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: CartItem(
             itemName: 'Item ${index + 1}',
             image: Image.network(
-              'https://ae01.alicdn.com/kf/Hb21b378b136a4d0eb78489bf16fbb643e/Intel-Core-I9-12900K-ES-QXLB-1-2-GHz-8P-8E-16-Core-24-Ch.jpg_Q90.jpg_.webp',
+              "https://i0.wp.com/www.giztechreview.com/wp-content/uploads/2021/10/Intel-12th-Generation-Core-i9-12900K-Processor-Unboxing-9.jpg",
+              fit: BoxFit.fill,
             ),
             itemCount: 2,
             price: 200,

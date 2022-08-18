@@ -22,9 +22,17 @@ class CheckOutPannel extends StatelessWidget {
               children: const [
                 Text(
                   'Checkout Price:',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
                 ),
-                // Spacer(),
-                Text('Rs. 5000'),
+                Text(
+                  'Rs. 5000',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 10),
@@ -41,6 +49,7 @@ class CheckOutPannel extends StatelessWidget {
                     'Checkout',
                     style: TextStyle(
                       color: Colors.white,
+                      fontWeight: FontWeight.w500,
                       fontSize: 24,
                     ),
                   ),
